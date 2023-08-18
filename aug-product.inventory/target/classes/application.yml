@@ -1,0 +1,16 @@
+server:
+  port: 8123
+spring :
+  datasource:
+     driverClassName : com.mysql.cj.jdbc.Driver
+     url : jdbc:mysql://localhost:3306/InventoryDetails
+     username : root
+     password : Ammanana@123
+  jpa :
+    hibernate :
+      ddl-auto : update
+      show-sql : true
+      generated-ddl : true
+      
+      
+     

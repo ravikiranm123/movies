@@ -1,0 +1,47 @@
+server:
+  port: 9597
+  
+spring:
+  application:
+    name: aug-ap-resilience-app
+  profiles:
+    active: production
+  jackson:
+    serialization: 
+      indent-output: true
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    endpoint:
+      health:
+        show-details: always
+    health:
+      circuitbreakers:
+        enabled: true
+        
+message: Welcome to MS implementation
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+ 
+
+ 
+
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      randomactivity:
+#        registerHealthIndicator: true
+#        eventConsumerBuffer-size: 10
+#        failureRateThreshold: 50
+#        minimumNumberOfCalls: 5
+#        automaticTransitionFromOpenToHalfOpenEnabled: true
+#        waitDurationInOpenState: 5s
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowSize: 10
+#        slidingWindowType: COUNT_BASED
